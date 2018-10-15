@@ -1,5 +1,12 @@
 def turn(board)
   puts "Please enter 1-9:"
+  user_input = input_to_index(gets.strip)
+  until valid_move?(board, user_input) == true
+    puts "Please enter a valid input between 1 and 9:"
+    user_input = input_to_index(gets.strip)
+  end
+   move(board, user_input)
+
 end
 
 
